@@ -1,7 +1,7 @@
 {
-  "name": "pr7-witcher-datamodel",
+  "name": "pr8-funko-pop-app",
   "version": "1.0.0",
-  "description": "PR7-DSI",
+  "description": "PR8-DSI",
   "main": "index.js",
   "scripts": {
     "doc": "typedoc",
@@ -11,7 +11,7 @@
     "coverage": "vitest run --coverage"
   },
   "keywords": [],
-  "author": "Alberto Oria | Valeria Bosch | Airam Prieto",
+  "author": "Valeria Bosch",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
@@ -20,6 +20,7 @@
     "@types/node": "^22.13.10",
     "@vitest/coverage-v8": "3.0.8",
     "@vitest/ui": "3.0.8",
+    "coveralls": "^3.1.1",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-tsdoc": "^0.4.0",
