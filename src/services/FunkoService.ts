@@ -1,16 +1,16 @@
-import fs from 'fs';
-import path from 'path';
-import { v4 as uuidv4 } from 'uuid';  
-import { fileURLToPath } from 'url';
-import { Funko } from '../models/FunkoPop.js';
-import { Logger } from '../utils/Logger.js';
+import fs from "fs";
+import path from "path";
+import { v4 as uuidv4 } from "uuid";
+import { fileURLToPath } from "url";
+import { Funko } from "../models/FunkoPop.js";
+import { Logger } from "../utils/Logger.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
  * Service class for managing Funko Pop collectibles.
- * 
+ *
  * This service provides methods for adding, modifying, removing, retrieving,
  * and listing Funko Pop figures, with data persistence in JSON files.
  */
@@ -19,11 +19,11 @@ export class FunkoService {
 
   /**
    * Creates a new FunkoService instance for a specific user.
-   * 
+   *
    * @param username - The name of the user who owns the Funko collection.
    */
   constructor(private username: string) {
-    this.userDir = path.join(__dirname, '..', '..', 'data', this.username);
+    this.userDir = path.join(__dirname, "..", "..", "data", this.username);
     if (!fs.existsSync(this.userDir)) {
       fs.mkdirSync(this.userDir, { recursive: true });
     }
@@ -31,7 +31,7 @@ export class FunkoService {
 
   /**
    * Gets the file path for a specific Funko Pop based on its ID.
-   * 
+   *
    * @param funkoId - The unique identifier of the Funko.
    * @returns The file path where the Funko data is stored.
    */
@@ -41,10 +41,10 @@ export class FunkoService {
 
   /**
    * Adds a new Funko Pop to the collection.
-   * 
+   *
    * @param funko - The Funko Pop details, excluding the ID (which is generated automatically).
    */
-  addFunko(funko: Omit<Funko, 'id'>): void {
+  addFunko(funko: Omit<Funko, "id">): void {
     const id = uuidv4();
     const newFunko = new Funko(
       id,
@@ -56,9 +56,9 @@ export class FunkoService {
       funko.number,
       funko.exclusive,
       funko.specialFeatures,
-      funko.marketValue
+      funko.marketValue,
     );
-  
+
     const filePath = this.getFunkoFilePath(id);
     fs.writeFileSync(filePath, JSON.stringify(newFunko, null, 2));
     Logger.success(`Funko ${newFunko.name} added successfully with ID ${id}.`);
@@ -66,7 +66,7 @@ export class FunkoService {
 
   /**
    * Modifies an existing Funko Pop in the collection.
-   * 
+   *
    * @param funko - The updated Funko object.
    */
   modifyFunko(funko: Funko): void {
@@ -81,7 +81,7 @@ export class FunkoService {
 
   /**
    * Removes a Funko Pop from the collection.
-   * 
+   *
    * @param funkoId - The unique identifier of the Funko to remove.
    */
   removeFunko(funkoId: string): void {
@@ -96,15 +96,15 @@ export class FunkoService {
 
   /**
    * Lists all Funkos in the collection.
-   * 
+   *
    * @returns An array of all Funko Pop figures stored for the user.
    */
   listFunkos(): Funko[] {
     const files = fs.readdirSync(this.userDir);
     const funkos: Funko[] = [];
     files.forEach((file) => {
-      if (file.endsWith('.json')) {
-        const data = fs.readFileSync(path.join(this.userDir, file), 'utf-8');
+      if (file.endsWith(".json")) {
+        const data = fs.readFileSync(path.join(this.userDir, file), "utf-8");
         const funko = JSON.parse(data);
         funkos.push(funko);
       }
@@ -114,7 +114,7 @@ export class FunkoService {
 
   /**
    * Retrieves a specific Funko Pop from the collection.
-   * 
+   *
    * @param funkoId - The unique identifier of the Funko.
    * @returns The Funko object if found, otherwise `undefined`.
    */
@@ -124,8 +124,8 @@ export class FunkoService {
       Logger.error(`Funko with ID ${funkoId} does not exist.`);
       return undefined;
     }
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  
+    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+
     return new Funko(
       data.id,
       data.name,
@@ -136,7 +136,7 @@ export class FunkoService {
       data.number,
       data.exclusive,
       data.specialFeatures,
-      data.marketValue
+      data.marketValue,
     );
   }
 }

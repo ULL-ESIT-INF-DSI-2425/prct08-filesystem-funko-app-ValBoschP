@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import chalk from "chalk";
 
 /**
  * A utility class to handle logging messages with different styles and colors.
@@ -7,7 +7,6 @@ import chalk from 'chalk';
  * color-coded output.
  */
 export class Logger {
-  
   /**
    * Logs an informational message to the console with blue text.
    * @param message - The message to be logged.

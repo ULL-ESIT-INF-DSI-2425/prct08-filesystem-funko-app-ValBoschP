@@ -1,6 +1,6 @@
 /**
  * Enumeration representing the different types of Funko Pop products.
- * 
+ *
  * This enumeration defines the various product lines that Funko offers,
  * each with its own unique style and design.
  */

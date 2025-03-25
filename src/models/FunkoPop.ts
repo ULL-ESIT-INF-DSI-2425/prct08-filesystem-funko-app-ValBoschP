@@ -7,7 +7,7 @@ import { funkoType } from "../enums/FunkoType.js";
 export class Funko {
   /**
    * Creates a new Funko Pop instance.
-   * 
+   *
    * @param id - Unique identifier for the Funko.
    * @param name - Name of the Funko figure.
    * @param description - Description of the Funko figure.

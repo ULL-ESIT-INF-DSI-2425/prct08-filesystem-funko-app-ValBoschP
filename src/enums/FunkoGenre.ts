@@ -1,6 +1,6 @@
 /**
  * Enumeration representing the different genres of Funko Pop products.
- * 
+ *
  * The values in this enumeration correspond to the categories in which
  * Funkos can be classified based on their origin or main theme.
  */
