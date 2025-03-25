@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';  
 import { fileURLToPath } from 'url';
-import { Funko } from '../models/FunkPop.js';
+import { Funko } from '../models/FunkoPop.js';
 import { Logger } from '../utils/Logger.js';
 
 const __filename = fileURLToPath(import.meta.url);

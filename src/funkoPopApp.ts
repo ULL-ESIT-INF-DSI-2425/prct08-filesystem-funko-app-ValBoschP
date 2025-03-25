@@ -3,7 +3,7 @@ import { hideBin } from 'yargs/helpers';
 import { FunkoService } from './services/FunkoService.js';
 import { funkoGenre } from './enums/FunkoGenre.js';
 import { funkoType } from './enums/FunkoType.js';
-import { Funko } from './models/FunkPop.js';
+import { Funko } from './models/FunkoPop.js';
 
 // Parse command-line arguments and execute commands with yargs
 yargs(hideBin(process.argv))
