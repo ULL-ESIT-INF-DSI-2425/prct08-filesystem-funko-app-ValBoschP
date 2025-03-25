@@ -5,23 +5,7 @@ import { funkoGenre } from './enums/FunkoGenre.js';
 import { funkoType } from './enums/FunkoType.js';
 import { Funko } from './models/FunkoPop.js';
 
-// Parse command-line arguments and execute commands with yargs
 yargs(hideBin(process.argv))
-  /**
-   * Command to add a new Funko to the collection.
-   * @param {Object} argv - The arguments passed to the command.
-   * @param {string} argv.username - The username associated with the Funko.
-   * @param {string} argv.id - The ID of the Funko.
-   * @param {string} argv.name - The name of the Funko.
-   * @param {string} argv.description - The description of the Funko.
-   * @param {funkoType} argv.type - The type of the Funko (e.g., Pop, Dorbz).
-   * @param {funkoGenre} argv.genre - The genre of the Funko (e.g., Movies, TV Shows).
-   * @param {string} argv.franchise - The franchise to which the Funko belongs.
-   * @param {number} argv.number - The unique number assigned to the Funko.
-   * @param {boolean} argv.exclusive - Whether the Funko is exclusive.
-   * @param {string} argv.specialFeatures - Special features of the Funko.
-   * @param {number} argv.marketValue - The market value of the Funko.
-   */
   .command(
     'add',
     'Add a Funko',
@@ -55,22 +39,6 @@ yargs(hideBin(process.argv))
       service.addFunko(funko);
     }
   )
-  
-  /**
-   * Command to modify an existing Funko in the collection.
-   * @param {Object} argv - The arguments passed to the command.
-   * @param {string} argv.username - The username associated with the Funko.
-   * @param {string} argv.id - The ID of the Funko to modify.
-   * @param {string} argv.name - The new name of the Funko.
-   * @param {string} argv.description - The new description of the Funko.
-   * @param {funkoType} argv.type - The new type of the Funko.
-   * @param {funkoGenre} argv.genre - The new genre of the Funko.
-   * @param {string} argv.franchise - The new franchise of the Funko.
-   * @param {number} argv.number - The new number of the Funko.
-   * @param {boolean} argv.exclusive - The new exclusivity status of the Funko.
-   * @param {string} argv.specialFeatures - The new special features of the Funko.
-   * @param {number} argv.marketValue - The new market value of the Funko.
-   */
   .command(
     'modify',
     'Modify a Funko',
@@ -104,13 +72,6 @@ yargs(hideBin(process.argv))
       service.modifyFunko(funko);
     }
   )
-
-  /**
-   * Command to remove a Funko from the collection.
-   * @param {Object} argv - The arguments passed to the command.
-   * @param {string} argv.username - The username associated with the Funko.
-   * @param {string} argv.id - The ID of the Funko to remove.
-   */
   .command(
     'remove',
     'Remove a Funko',
@@ -123,12 +84,6 @@ yargs(hideBin(process.argv))
       service.removeFunko(argv.id as string);
     }
   )
-
-  /**
-   * Command to list all Funkos in the collection.
-   * @param {Object} argv - The arguments passed to the command.
-   * @param {string} argv.username - The username associated with the Funkos.
-   */
   .command(
     'list',
     'List all Funkos',
@@ -143,13 +98,6 @@ yargs(hideBin(process.argv))
       });
     }
   )
-
-  /**
-   * Command to show the details of a specific Funko.
-   * @param {Object} argv - The arguments passed to the command.
-   * @param {string} argv.username - The username associated with the Funko.
-   * @param {string} argv.id - The ID of the Funko to show.
-   */
   .command(
     'show',
     'Show details of a Funko',
@@ -167,12 +115,6 @@ yargs(hideBin(process.argv))
       }
     }
   )
-
-  /**
-   * Enforces at least one command before proceeding.
-   */
   .demandCommand(1, 'You need at least one command before moving on')
-  
   .help()
-  
   .argv;
