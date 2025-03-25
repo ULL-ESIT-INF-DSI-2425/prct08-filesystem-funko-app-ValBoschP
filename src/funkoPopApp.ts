@@ -115,6 +115,6 @@ yargs(hideBin(process.argv))
       }
     }
   )
-  .demandCommand(1, 'You need at least one command before moving on')
+  .demandCommand(1, 'You need at least one command before moving on')  // Asegúrate de que esta línea esté colocada correctamente
   .help()
   .argv;
