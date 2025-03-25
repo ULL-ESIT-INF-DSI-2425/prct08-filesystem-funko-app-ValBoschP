@@ -35,7 +35,7 @@ export class Funko {
   /**
    * Returns the current Funko instance.
    */
-  get Funko(): Funko {
+  get Funko(): this {
     return this;
   }
 
