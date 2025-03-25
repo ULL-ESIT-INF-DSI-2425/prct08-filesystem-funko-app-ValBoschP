@@ -8,7 +8,8 @@
     "serve:doc": "serve docs",
     "test": "vitest run",
     "test:ui": "vitest --ui --coverage",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "Valeria Bosch",
