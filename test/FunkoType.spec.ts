@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { funkoType } from "../src/enums/FunkoType.js";
+import { funkoType } from "../src/funkoApp/enums/FunkoType.js";
 
 describe("funkoType Enum", () => {
   test("should have the correct value for POP", () => {

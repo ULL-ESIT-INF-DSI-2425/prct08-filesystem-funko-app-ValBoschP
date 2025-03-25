@@ -1,6 +1,6 @@
 import { describe, test, expect, vi } from "vitest";
 import chalk from "chalk";
-import { Logger } from "../src/utils/Logger.js";
+import { Logger } from "../src/funkoApp/utils/Logger.js";
 
 describe("Logger Class", () => {
   test("should log an informational message with blue text", () => {

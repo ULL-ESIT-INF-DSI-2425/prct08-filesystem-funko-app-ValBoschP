@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { funkoGenre } from "../src/enums/FunkoGenre.js";
+import { funkoGenre } from "../src/funkoApp/enums/FunkoGenre.js";
 
 describe("funkoGenre Enum", () => {
   test("should have the correct value for ANIMATION", () => {

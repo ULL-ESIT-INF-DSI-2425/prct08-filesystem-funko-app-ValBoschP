@@ -1,7 +1,7 @@
 import { describe, test, expect, vi } from "vitest";
-import { funkoGenre } from "../src/enums/FunkoGenre.js";
-import { funkoType } from "../src/enums/FunkoType.js";
-import { Funko } from "../src/models/FunkoPop.js";
+import { funkoGenre } from "../src/funkoApp/enums/FunkoGenre.js";
+import { funkoType } from "../src/funkoApp/enums/FunkoType.js";
+import { Funko } from "../src/funkoApp/models/FunkoPop.js";
 
 describe("Funko Class", () => {
   const testFunko = new Funko(
