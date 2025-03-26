@@ -140,7 +140,7 @@ yargs(hideBin(process.argv))
     (argv) => {
       const service = new FunkoService(argv.username as string);
       const funko = service.getFunko(argv.id as string);
-      funko ? funko.printInfo() : console.log("Funko not found");
+      funko?.printInfo();
     },
   )
   .demandCommand(1, "You need at least one command before moving on")
