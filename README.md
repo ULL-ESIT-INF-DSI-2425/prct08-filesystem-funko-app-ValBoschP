@@ -15,11 +15,11 @@ A simple **command-line application** for managing your Funko Pop collection. Ad
 
 | Action   | Command Example |
 |----------|---------------|
-| ➕ Add Funko | `add --user "edusegre" --id 1 --name "Classic Sonic" --desc "The best Sonic Funko ever" --type "Pop!" --genre "Games" ...` |
-| ✏️ Modify Funko | `modify --i 001 --name "Spider-Man"` |
-| ❌ Remove Funko | `remove --i 001` |
-| 📜 List Funkos | `list --user user-test` |
-| 🔍 Show Funko | `show --i 001` |
+| ➕ Add Funko | `add --user "user" --id 1 --name "Classic Sonic" --desc "The best Sonic Funko ever" --type "Pop!" --genre "Games" ...` |
+| ✏️ Modify Funko | `modify --id 1 --name "Spider-Man"` |
+| ❌ Remove Funko | `remove --id 1` |
+| 📜 List Funkos | `list --user "user"` |
+| 🔍 Show Funko | `show --id 1` |
 
 ## 📦 Installation  
 
