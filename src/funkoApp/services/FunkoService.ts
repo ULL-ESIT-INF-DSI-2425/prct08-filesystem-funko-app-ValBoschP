@@ -44,10 +44,9 @@ export class FunkoService {
    *
    * @param funko - The Funko Pop details, excluding the ID (which is generated automatically).
    */
-  addFunko(funko: Omit<Funko, "id">): void {
-    const id = uuidv4();
+  addFunko(funko: Funko): void {
     const newFunko = new Funko(
-      id,
+      funko.id,
       funko.name,
       funko.description,
       funko.type,
@@ -59,9 +58,9 @@ export class FunkoService {
       funko.marketValue,
     );
 
-    const filePath = this.getFunkoFilePath(id);
+    const filePath = this.getFunkoFilePath(funko.id);
     fs.writeFileSync(filePath, JSON.stringify(newFunko, null, 2));
-    Logger.success(`Funko ${newFunko.name} added successfully with ID ${id}.`);
+    Logger.success(`Funko ${newFunko.name} added successfully with ID ${funko.id}.`);
   }
 
   /**
@@ -102,15 +101,32 @@ export class FunkoService {
   listFunkos(): Funko[] {
     const files = fs.readdirSync(this.userDir);
     const funkos: Funko[] = [];
+  
     files.forEach((file) => {
-      if (file.endsWith(".json")) {
-        const data = fs.readFileSync(path.join(this.userDir, file), "utf-8");
-        const funko = JSON.parse(data);
+      if (file.endsWith('.json')) {
+        const data = fs.readFileSync(path.join(this.userDir, file), 'utf-8');
+        const jsonData = JSON.parse(data);
+        
+        const funko = new Funko(
+          jsonData.id,
+          jsonData.name,
+          jsonData.description,
+          jsonData.type,
+          jsonData.genre,
+          jsonData.franchise,
+          jsonData.number,
+          jsonData.exclusive,
+          jsonData.specialFeatures,
+          jsonData.marketValue
+        );
+        
         funkos.push(funko);
       }
     });
+  
     return funkos;
   }
+  
 
   /**
    * Retrieves a specific Funko Pop from the collection.

@@ -44,6 +44,7 @@ export class Funko {
    */
   printInfo(): void {
     console.log(`
+      ------------------------
       ID: ${this.id}
       Name: ${this.name}
       Description: ${this.description}
@@ -53,7 +54,7 @@ export class Funko {
       Number: ${this.number}
       Exclusive: ${this.exclusive}
       Special Features: ${this.specialFeatures}
-      Market Value: ${this.marketValue}
+      Market Value: ${this.marketValue} €
     `);
   }
 }
