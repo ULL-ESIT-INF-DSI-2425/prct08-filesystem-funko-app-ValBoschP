@@ -19,7 +19,7 @@ A simple **command-line application** for managing your Funko Pop collection. Ad
 | ✏️ Modify Funko | `modify --id 1 --name "Spider-Man"` |
 | ❌ Remove Funko | `remove --id 1` |
 | 📜 List Funkos | `list --user "user"` |
-| 🔍 Show Funko | `show --id 1` |
+| 🔍 Show Funko | `show --user "user" --id 1` |
 
 ## 📦 Installation  
 
